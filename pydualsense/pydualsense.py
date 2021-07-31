@@ -3,7 +3,7 @@
 import os, sys
 from sys import platform
 
-if platform.startswith('Windows') and sys.version_info >= (3,8):
+if platform.startswith('win32') and sys.version_info >= (3,8):
     os.add_dll_directory(os.getcwd())
 
 import hidapi
@@ -30,7 +30,7 @@ class pydualsense:
 
         self.state = DSState() # controller states
 
-        if platform.startswith('Windows'):
+        if platform.startswith('win32'):
             self.conType = self.determineConnectionType() # determine USB or BT connection
         else:
             # set for usb manually
