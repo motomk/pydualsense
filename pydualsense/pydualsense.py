@@ -91,6 +91,9 @@ class pydualsense:
         if detected_device == None:
             raise Exception('No device detected')
 
+        print("device_id: {0}".format(detected_device.vendor_id))
+        print("product_id: {0}".format(detected_device.product_id))
+
         dual_sense = hidapi.Device(vendor_id=detected_device.vendor_id, product_id=detected_device.product_id)
         return dual_sense
 
