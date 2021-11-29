@@ -91,6 +91,7 @@ class pydualsense:
         if detected_device == None:
             raise Exception('No device detected')
 
+        print("debug")
         print("device_id: {0}".format(detected_device.vendor_id))
         print("product_id: {0}".format(detected_device.product_id))
 
